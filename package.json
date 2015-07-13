@@ -1,0 +1,36 @@
+{
+  "name": "redux-delegator",
+  "version": "0.0.2",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "make clean build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lapanoid/redux-delegator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lapanoid/redux-delegator/issues"
+  },
+  "homepage": "https://github.com/lapanoid/redux-delegator#readme",
+  "dependencies": {
+    "flux-standard-action": "^0.6.0",
+    "immutable": "^3.7.4",
+    "ramda": "^0.16.0",
+    "reduce-reducers": "^0.1.1"
+  },
+  "devDependencies": {
+    "babel": "^5.6.14",
+    "babel-core": "^5.6.15",
+    "babel-eslint": "^3.1.20",
+    "chai": "^3.0.0",
+    "eslint": "^0.24.0",
+    "eslint-config-airbnb": "0.0.6",
+    "lodash.isplainobject": "^3.2.0",
+    "mocha": "^2.2.5"
+  }
+}
