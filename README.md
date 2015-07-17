@@ -49,7 +49,7 @@ export const rootStore = createImmutableDelegator(
     [
         {
             prop: "db",
-            store: companiesStore
+            store: dbStore
         },
         {
             prop: "data",
