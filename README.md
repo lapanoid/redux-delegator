@@ -15,7 +15,7 @@ const dbStore = handleActions({
                 STATUS_SYNC_DB: (state, action) => state.set('dbSyncMode', action.payload)
             }, Immutable.fromJS({}))
 
-export const root = createImmutableDelegator(
+export const rootStore = createImmutableDelegator(
     [
         {
             prop: "data",
