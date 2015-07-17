@@ -1,5 +1,7 @@
 #redux-delegator
 
+[![npm version](https://badge.fury.io/js/redux-delegator.svg)](http://badge.fury.io/js/redux-delegator)
+
 Compose stores in a structured way 
 
 ```
