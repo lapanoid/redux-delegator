@@ -18,7 +18,7 @@ const dbStore = handleActions({
 export const rootStore = createImmutableDelegator(
     [
         {
-            prop: "data",
+            prop: "companies",
             store: companiesStore
         },
         {
@@ -33,7 +33,7 @@ this creates store which maintain such data
 
 ```
 {
-  data:/*maintained by companiesStore*/
+  companies:/*maintained by companiesStore*/
   db:/*maintained by dbStore*/
 }
 ```
