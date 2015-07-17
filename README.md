@@ -33,6 +33,8 @@ export const rootStore = createImmutableDelegator(
 
 this creates store which maintain such data
 
+
+
 ```
 {
   companies:/*maintained by companiesStore*/
@@ -40,6 +42,32 @@ this creates store which maintain such data
 }
 ```
 
+You can also <img src='https://i.imgflip.com/ob4v0.jpg' width='200'> ...
+
+```
+export const rootStore = createImmutableDelegator(
+    [
+        {
+            prop: "db",
+            store: companiesStore
+        },
+        {
+            prop: "data",
+            store: createImmutableDelegator(
+            [
+              {
+                  prop: "companies",
+                  store: companiesStore
+              },
+              {
+                  prop: "products",
+                  store: dbStore
+              }
+            ]
+        }
+    ]
+);
+```
 
 ## TODO
 - rename reducers to stores
