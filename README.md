@@ -1,4 +1,4 @@
-#TODO
+#redux-delegator
 
 Compose stores in a structured way 
 
