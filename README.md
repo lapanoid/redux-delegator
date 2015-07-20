@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/redux-delegator.svg)](http://badge.fury.io/js/redux-delegator)
 
-Compose stores in a structured way 
+Compose reducers in a structured way 
 
 ```
 const companiesStore = handleActions({
@@ -21,17 +21,17 @@ export const rootStore = createImmutableDelegator(
     [
         {
             prop: "companies",
-            store: companiesStore
+            reducer: companiesStore
         },
         {
             prop: "db",
-            store: dbStore
+            reducer: dbStore
         }
     ]
 );
 ```
 
-this creates store which maintain such data
+this creates reducer which maintain such data
 
 
 
@@ -49,19 +49,19 @@ export const rootStore = createImmutableDelegator(
     [
         {
             prop: "db",
-            store: dbStore
+            reducer: dbStore
         },
         {
             prop: "data",
-            store: createImmutableDelegator(
+            reducer: createImmutableDelegator(
             [
               {
                   prop: "companies",
-                  store: companiesStore
+                  reducer: companiesStore
               },
               {
                   prop: "products",
-                  store: dbStore
+                  reducer: dbStore
               }
             ]
         }
@@ -70,6 +70,5 @@ export const rootStore = createImmutableDelegator(
 ```
 
 ## TODO
-- rename stores to reducers
 - make an example
 - remove Immutable dep (maybe)
