@@ -70,6 +70,6 @@ export const rootStore = createImmutableDelegator(
 ```
 
 ## TODO
-- rename reducers to stores
+- rename stores to reducers
 - make an example
 - remove Immutable dep (maybe)
