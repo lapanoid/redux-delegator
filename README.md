@@ -5,27 +5,27 @@
 Compose reducers in a structured way 
 
 ```
-const companiesStore = handleActions({
+const companiesReducer = handleActions({
                 ADD_COMPANY: (state, {payload:{doc, ASIN}}) => state.set(ASIN, doc),
                 REMOVE_COMPANY: (state, {payload:{ASIN}}) => state.delete(ASIN),
                 DROP_COMPANIES: (state, action) => Immutable.fromJS({})
             }, Immutable.fromJS({}))
             
-const dbStore = handleActions({
+const dbReducer = handleActions({
                 INIT_DB: (state, action) => state.merge(action.payload),
                 PROGRESS_SYNC_DB: (state, action) => state.set('dbSyncProgress', action.payload),
                 STATUS_SYNC_DB: (state, action) => state.set('dbSyncMode', action.payload)
             }, Immutable.fromJS({}))
 
-export const rootStore = createImmutableDelegator(
+export const rootReducer = createImmutableDelegator(
     [
         {
             prop: "companies",
-            reducer: companiesStore
+            reducer: companiesReducer
         },
         {
             prop: "db",
-            reducer: dbStore
+            reducer: dbReducer
         }
     ]
 );
@@ -37,19 +37,19 @@ this creates reducer which maintain such data
 
 ```
 {
-  companies:/*maintained by companiesStore*/
-  db:/*maintained by dbStore*/
+  companies:/*maintained by companiesReducer*/
+  db:/*maintained by dbReducer*/
 }
 ```
 
 You can also <img src='https://i.imgflip.com/ob4v0.jpg' width='200'> ...
 
 ```
-export const rootStore = createImmutableDelegator(
+export const rootReducer = createImmutableDelegator(
     [
         {
             prop: "db",
-            reducer: dbStore
+            reducer: dbReducer
         },
         {
             prop: "data",
@@ -57,11 +57,11 @@ export const rootStore = createImmutableDelegator(
             [
               {
                   prop: "companies",
-                  reducer: companiesStore
+                  reducer: companiesReducer
               },
               {
                   prop: "products",
-                  reducer: dbStore
+                  reducer: dbReducer
               }
             ]
         }
